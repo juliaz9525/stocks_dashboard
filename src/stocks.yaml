@@ -1,0 +1,13 @@
+stocks:
+  - AAPL
+  - MSFT
+  - GOOGL
+  - NVDA
+  - QUBT
+  - SMCI
+  - IONQ
+  - ^IRX
+  - SPY
+
+dperiod: "1y"
+dinterval: "1d"
