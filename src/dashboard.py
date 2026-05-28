@@ -3,17 +3,9 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 
-
-# ---------------------------------
-# DASHBOARD
-# ---------------------------------
-
 def build_dashboard(ohlc_df: pd.DataFrame, metrics_df: pd.DataFrame):
 
-    # ---------------------------------
     # PAGE
-    # ---------------------------------
-
     st.set_page_config(
         page_title="Stocks Dashboard",
         layout="wide"
@@ -21,10 +13,7 @@ def build_dashboard(ohlc_df: pd.DataFrame, metrics_df: pd.DataFrame):
 
     st.title("Stocks Dashboard")
 
-    # ---------------------------------
     # SIDEBAR
-    # ---------------------------------
-
     tickers = sorted(metrics_df["Ticker"].unique())
 
     selected_ticker = st.sidebar.selectbox(
@@ -32,18 +21,10 @@ def build_dashboard(ohlc_df: pd.DataFrame, metrics_df: pd.DataFrame):
         tickers
     )
 
-    # ---------------------------------
     # FILTER
-    # ---------------------------------
-
     ticker_df = ohlc_df[
         ohlc_df["Ticker"] == selected_ticker
     ].copy()
-
-    # clean date
-    #ticker_df["Date"] = pd.to_datetime(
-     #   ticker_df["Date"]
-    #)
 
     # table view -> latest first
     ticker_df = ticker_df.sort_values(
@@ -61,10 +42,7 @@ def build_dashboard(ohlc_df: pd.DataFrame, metrics_df: pd.DataFrame):
         metrics_df["Ticker"] == selected_ticker
     ].iloc[0]
 
-    # ---------------------------------
     # METRICS ROW
-    # ---------------------------------
-
     col1, col2, col3, col4, col5 = st.columns(5)
 
     col1.metric(
@@ -92,10 +70,7 @@ def build_dashboard(ohlc_df: pd.DataFrame, metrics_df: pd.DataFrame):
         f"{metrics['RSI']:.1f}"
     )
 
-    # ---------------------------------
-    # CANDLESTICK
-    # ---------------------------------
-
+    # CANDLESTIC
     fig = go.Figure()
 
     fig.add_trace(
@@ -144,13 +119,10 @@ def build_dashboard(ohlc_df: pd.DataFrame, metrics_df: pd.DataFrame):
 
     st.plotly_chart(
         fig,
-        width=True
+        width="stretch"
     )
 
-    # ---------------------------------
     # RETURNS + VOLUME
-    # ---------------------------------
-
     col1, col2 = st.columns(2)
 
     with col1:
@@ -164,7 +136,7 @@ def build_dashboard(ohlc_df: pd.DataFrame, metrics_df: pd.DataFrame):
 
         st.plotly_chart(
             returns_fig,
-            width=True
+            width="stretch"
         )
 
     with col2:
@@ -178,13 +150,10 @@ def build_dashboard(ohlc_df: pd.DataFrame, metrics_df: pd.DataFrame):
 
         st.plotly_chart(
             volume_fig,
-            width=True
+            width="stretch"
         )
 
-    # ---------------------------------
     # RSI
-    # ---------------------------------
-
     rsi_fig = px.line(
         chart_df,
         x="Date",
@@ -197,13 +166,10 @@ def build_dashboard(ohlc_df: pd.DataFrame, metrics_df: pd.DataFrame):
 
     st.plotly_chart(
         rsi_fig,
-        width=True
+        width="stretch"
     )
 
-    # ---------------------------------
     # STOCK SCREENER TABLE
-    # ---------------------------------
-
     st.subheader("Metrics Overview")
 
     display_cols = [
@@ -219,18 +185,15 @@ def build_dashboard(ohlc_df: pd.DataFrame, metrics_df: pd.DataFrame):
     st.dataframe(
         metrics_df[display_cols]
         .sort_values("Sharpe", ascending=False),
-        width=True,
+        width="stretch",
         hide_index=True
     )
 
-    # ---------------------------------
     # RAW DATA
-    # ---------------------------------
-
     with st.expander("Show OHLC Data"):
 
         st.dataframe(
             ticker_df,
-            use_container_width=True,
+            width="stretch",
             hide_index=True
         )
