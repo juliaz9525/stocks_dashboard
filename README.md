@@ -1,4 +1,4 @@
-# Stocks Dashboard
+# Stock Analytics Dashboard
 
 A Python-based stock analytics dashboard built with Streamlit, Pandas, and Plotly.
 
@@ -70,6 +70,7 @@ project/
 ├── stocks.yaml             # Stocks and intervals values
 ├── requirements.txt
 └── README.md
+```
 
 # Metrics Overview
 
@@ -85,8 +86,6 @@ Annualized standard deviation of returns.
 
 Measures sensitivity relative to the benchmark.
 
-
-
 # Installation
 
 Clone the repository:
@@ -94,13 +93,13 @@ Clone the repository:
 ```bash
 git clone <repository-url>
 cd <repository-name>
-
+```
 
 Install dependencies:
 
 ```bash
 pip install -r requirements.txt
-
+```
 
 
 # Running the Dashboard
@@ -113,8 +112,6 @@ streamlit run app.py
 
 The dashboard will open locally in your browser.
 
-
-
 # Example Workflow
 
 1. Load historical stock data
@@ -122,8 +119,6 @@ The dashboard will open locally in your browser.
 3. Compare performance against SPY
 4. Visualize OHLC data and risk metrics
 5. Analyze volatility and drawdowns
-
-
 
 # Future Improvements
 
@@ -137,7 +132,6 @@ Planned extensions:
 
 * Better dashboard layout and usability
 
-
 # Purpose
 
 This project was created to practice:
@@ -147,3 +141,4 @@ This project was created to practice:
 * data analysis with Pandas
 * calculating basic stock performance metrics
 * creating visualizations with Plotly
+
