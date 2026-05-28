@@ -2,6 +2,9 @@ from get_data import get_data_f
 from load_yaml import load_yaml_f
 from transform import transform_data
 from dashboard import build_dashboard
+from pathlib import Path
+
+config_path = Path.home() / "stocks_analytics" / "src" / "stocks.yaml"
 
 path = r"/home/julia/PycharmProjects/stocks_analytics/src/stocks.yaml"
 
