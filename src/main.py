@@ -6,8 +6,6 @@ from pathlib import Path
 
 config_path = Path.home() / "stocks_analytics" / "src" / "stocks.yaml"
 
-path = r"/home/julia/PycharmProjects/stocks_analytics/src/stocks.yaml"
-
 def main(stock_path: str):
     stock_list = load_yaml_f(stock_path)
     data = get_data_f(stock_list["stocks"], stock_list["dperiod"], stock_list["dinterval"])
