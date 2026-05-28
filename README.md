@@ -141,4 +141,7 @@ This project was created to practice:
 * data analysis with Pandas
 * calculating basic stock performance metrics
 * creating visualizations with Plotly
+<img width="1440" height="785" alt="image" src="https://github.com/user-attachments/assets/eb82bcd4-1e39-412a-85ae-6d35dc1b8a7e" />
+<img width="1440" height="785" alt="image" src="https://github.com/user-attachments/assets/f24502b3-3682-471e-a2c8-bc30e987ba46" />
+
 
