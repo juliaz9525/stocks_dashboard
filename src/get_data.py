@@ -8,5 +8,4 @@ def get_data_f(stocks, dperiod, dinterval)-> dict:
         df = df.reset_index()
         df["Ticker"] = stock
         data[stock] = df
-    print(data)
     return data

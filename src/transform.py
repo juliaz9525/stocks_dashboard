@@ -80,10 +80,7 @@ def transform_data(data: dict)-> dict:
 
     processed_data = pd.concat(processed_data)
     metrics_dfs = pd.concat(metrics_dfs)
-    print(processed_data)
-    print(metrics_dfs)
-    print(processed_data.columns)
-    print(metrics_dfs.columns)
+
     return {
         "processed_data": processed_data,
         "metrics_dfs": metrics_dfs

@@ -4,9 +4,9 @@ from transform import transform_data
 from dashboard import build_dashboard
 from pathlib import Path
 
-config_path = Path.home() / "stocks_analytics" / "src" / "stocks.yaml"
+path = Path.home() / "PycharmProjects" / "stocks_analytics" / "src" / "stocks.yaml"
 
-def main(stock_path: str):
+def main(stock_path: Path):
     stock_list = load_yaml_f(stock_path)
     data = get_data_f(stock_list["stocks"], stock_list["dperiod"], stock_list["dinterval"])
     dfs = transform_data(data)
