@@ -14,8 +14,6 @@ Designed as both:
 * a portfolio project for finance/data analyst roles
 * a foundation for future swing trading and portfolio analytics tools
 
----
-
 # Features
 
 ## Market Data Processing
@@ -45,8 +43,6 @@ Built with Streamlit and Plotly:
 * Metric summary tables
 * Interactive filtering and navigation
 
----
-
 # Tech Stack
 
 ## Languages
@@ -61,8 +57,6 @@ Built with Streamlit and Plotly:
 * Streamlit
 * yfinance
 
----
-
 # Project Structure
 
 ```text
@@ -76,9 +70,6 @@ project/
 ├── stocks.yaml             # Stocks and intervals values
 ├── requirements.txt
 └── README.md
-```
-
----
 
 # Metrics Overview
 
@@ -94,7 +85,7 @@ Annualized standard deviation of returns.
 
 Measures sensitivity relative to the benchmark.
 
----
+
 
 # Installation
 
@@ -103,15 +94,14 @@ Clone the repository:
 ```bash
 git clone <repository-url>
 cd <repository-name>
-```
+
 
 Install dependencies:
 
 ```bash
 pip install -r requirements.txt
-```
 
----
+
 
 # Running the Dashboard
 
@@ -123,7 +113,7 @@ streamlit run app.py
 
 The dashboard will open locally in your browser.
 
----
+
 
 # Example Workflow
 
@@ -133,7 +123,7 @@ The dashboard will open locally in your browser.
 4. Visualize OHLC data and risk metrics
 5. Analyze volatility and drawdowns
 
----
+
 
 # Future Improvements
 
@@ -147,7 +137,6 @@ Planned extensions:
 
 * Better dashboard layout and usability
 
----
 
 # Purpose
 
